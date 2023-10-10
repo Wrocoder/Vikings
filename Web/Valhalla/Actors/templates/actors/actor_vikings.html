@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vikings</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        .actor-details {
+            display: inline-block;
+            text-align: left;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        .actor-details img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Actor Details</h1>
+
+    <div class="actor-details">
+        <p><strong>Actor name:</strong> {{ actors.actor_name }}</p>
+
+        {% if actors.img_url %}
+        <img src="{{ actors.img_url }}" alt="{{ actors.actor_name }}">
+        {% else %}
+        <p><em>No image available</em></p>
+        {% endif %}
+
+        <p><strong>Info:</strong></p>
+        <ul>
+            <li><strong>Hero Name:</strong> {{ actors.hero_name }}</li>
+            <li><strong>Article:</strong> {{ actors.article }}</li>
+        </ul>
+    </div>
+</body>
+</html>

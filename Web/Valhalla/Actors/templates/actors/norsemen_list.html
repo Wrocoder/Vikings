@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Norsemen</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>List of actors of the TV series Norsemen</h1>
+    <ul>
+        {% for entry in norsemen %}
+            <li><a href="{% url 'actor_norsemen' actor_id=entry.id %}">{{ entry.actor_name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

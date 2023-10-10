@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Norsemen</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        .actor-details {
+            display: inline-block;
+            text-align: left;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        .actor-details img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Actor Details</h1>
+
+    <div class="actor-details">
+        <p><strong>Actor:</strong> {{ actors.actor_name }}</p>
+
+        {% if actors.href_img %}
+            <img src="{{ actors.href_img }}" alt="{{ actors.actor_name }}">
+        {% else %}
+            <p><em>No image available</em></p>
+        {% endif %}
+
+        <p><strong>Info:</strong></p>
+        <ul>
+            <li><strong>Article:</strong> {{ actors.overview }}</li>
+
+            {% if actors.mini_bio %}
+                <li><strong>BIO:</strong> {{ actors.mini_bio }}</li>
+            {% else %}
+                <p><em>No mini_bio available</em></p>
+            {% endif %}
+
+            {% if actors.add %}
+                <li><strong>Additional info:</strong> {{ actors.add }}</li>
+            {% else %}
+                <p><em>No additional info available</em></p>
+            {% endif %}
+
+        </ul>
+    </div>
+</body>
+</html>
